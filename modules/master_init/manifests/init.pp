@@ -7,11 +7,6 @@
     port     => 8081,
  }
 
- service { 'firewalld':
-  ensure => stopped,
-  enable => false,
- }
-
  include nginx
   
  nginx::resource::server { 'static':
