@@ -6,7 +6,7 @@ class slave1_init {
 
  file {'/var/www/html/index.html':
   ensure => file,
-  source => 'puppet:///modules/static/index.html'
+  source => 'puppet:///modules/slave1_init/index.html'
  }
 
  service { 'httpd':
