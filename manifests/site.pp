@@ -1,7 +1,5 @@
 node 'master.puppet' {
   
- include nginx
-
  package { ['nginx', 'policycoreutils-python-utils-2.9-16.el8.noarch']:
   ensure => latest,
  }
@@ -17,6 +15,8 @@ node 'master.puppet' {
     protocol => 'tcp',
     port     => 8081,
  }
+
+  include nginx
 
   nginx::resource::server { 'static':
    listen_port => 8080,
