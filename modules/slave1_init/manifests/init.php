@@ -22,4 +22,4 @@ class slave1_init {
  file {'/root/README':
   ensure => absent,
  }
-]
+}
