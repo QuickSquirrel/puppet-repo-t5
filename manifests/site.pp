@@ -1,3 +1,3 @@
 node 'master.puppet' {
- include master
+ include master-init
 }
