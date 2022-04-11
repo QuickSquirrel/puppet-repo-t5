@@ -1,6 +1,6 @@
 node 'master.puppet' {
   
- package { ['nginx', 'policycoreutils-python-utils-2.9-16.el8.noarch']:
+ package { ['nginx', 'policycoreutils']:
   ensure => latest,
  }
 
