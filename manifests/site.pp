@@ -1,13 +1,4 @@
 node 'master.puppet' {
-  
- package { ['nginx', 'policycoreutils']:
-  ensure => latest,
- }
-
- file {'/usr/share/nginx/html/index.html':
-  ensure => file,
-  source => 'puppet:///modules/master/index.html'
- }
 
  selinux::port { 'non-standard-http-port':
     ensure   => 'present',
@@ -16,6 +7,13 @@ node 'master.puppet' {
     port     => 8081,
  }
 
+ service { 'firewalld':
+  ensure => stopped,
+  enable => false,
+ }
+
+ include nginx
+  
  nginx::resource::server { 'static':
    listen_port => 8080,
    proxy       => 'http://192.168.50.10:80',
@@ -24,15 +22,5 @@ node 'master.puppet' {
  nginx::resource::server { 'dynamic':
    listen_port => 8081,
    proxy       => 'http://192.168.50.20:80',
- }
-
- service { 'nginx':
-  ensure => running,
-  enable => true,
- }
-
- service { 'firewalld':
-  ensure => stopped,
-  enable => false,
  }
 }
