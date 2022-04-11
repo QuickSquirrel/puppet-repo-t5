@@ -6,7 +6,7 @@ node 'master.puppet' {
 
  file {'/usr/share/nginx/html/index.html':
   ensure => file,
-  source => 'puppet:///modules/static/index.html'
+  source => 'puppet:///modules/master/index.html'
  }
 
  selinux::port { 'non-standard-http-port':
