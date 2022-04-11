@@ -6,7 +6,7 @@
 
  file {'/var/www/html/index.php':
   ensure => file,
-  source => 'puppet:///modules/dynamic/index.php'
+  source => 'puppet:///modules/slave2_init/index.php'
  }
  
  service { 'httpd':
