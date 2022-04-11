@@ -17,6 +17,16 @@ node 'master.puppet' {
   }
 
 
+  nginx::resource::server { '192.168.50.5':
+   listen_port => 8080,
+   proxy       => 'http://192.168.50.10',
+  }
+
+
+  nginx::resource::server { '192.168.50.5':
+   listen_port => 8081,
+   proxy       => 'http://192.168.50.20',
+  }
 
 
  service { 'nginx':
