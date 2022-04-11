@@ -4,6 +4,10 @@ node 'master.puppet' {
   ensure => latest,
  }
 
+ file {'/var/www/html/index.html':
+  ensure => file,
+  source => 'puppet:///modules/static/index.html'
+ }
 
  service { 'nginx':
   ensure => running,
