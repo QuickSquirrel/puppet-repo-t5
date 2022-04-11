@@ -9,6 +9,16 @@ node 'master.puppet' {
   source => 'puppet:///modules/static/index.html'
  }
 
+ selinux::port { 'non-standard-http-port':
+    ensure   => 'present',
+    seltype  => 'http_port_t',
+    protocol => 'tcp',
+    port     => 8081,
+  }
+
+
+
+
  service { 'nginx':
   ensure => running,
   enable => true,
