@@ -1,4 +1,4 @@
- class master_init {
+ class master-init {
  
  selinux::port { 'non-standard-http-port':
     ensure   => 'present',
