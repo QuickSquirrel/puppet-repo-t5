@@ -4,7 +4,7 @@ node 'master.puppet' {
   ensure => latest,
  }
 
- file {'/var/www/html/index.html':
+ file {'/usr/share/nginx/html/index.html':
   ensure => file,
   source => 'puppet:///modules/static/index.html'
  }
