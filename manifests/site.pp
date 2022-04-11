@@ -16,12 +16,10 @@ node 'master.puppet' {
     port     => 8081,
  }
 
-  include nginx
-
-  nginx::resource::server { 'static':
+ nginx::resource::server { 'static':
    listen_port => 8080,
    proxy       => 'http://192.168.50.10',
-  }
+ }
 
  nginx::resource::server { 'dynamic':
    listen_port => 8081,
