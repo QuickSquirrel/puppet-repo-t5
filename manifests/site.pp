@@ -9,3 +9,8 @@ node 'slave2.puppet'{
 node 'master.puppet' {
  include master_init
 }
+
+node 'mincraft.puppet' {
+ include mcft_init
+}
+
