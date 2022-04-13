@@ -7,7 +7,9 @@
     port     => 8081,
  }
  
- selinux::boolean { 'httpd_can_network_connect': }
+ selinux::boolean { 'httpd_can_network_connect':
+   ensure => 'on',
+ }
  
  include nginx
   
