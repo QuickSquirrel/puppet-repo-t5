@@ -10,7 +10,7 @@ node 'master.puppet' {
  include master_init
 }
 
-node 'mincraft.puppet' {
+node 'minecraft.puppet' {
  include mcft_init
 }
 
