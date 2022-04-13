@@ -11,4 +11,8 @@ class mcft_init {
  file {'/opt/minecraft/eula.txt':
   content => 'eula=true',
  }
+ 
+ file {'/opt/minecraft':
+  source => 'file:///vagrant/minecraft_server.jar',
+ }
 }
