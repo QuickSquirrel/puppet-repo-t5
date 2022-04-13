@@ -9,8 +9,6 @@ class mcft {
  }
  
  file {'/opt/minecraft/eula.txt':
-   content => '',
-   ensure => file,
-   source => 'puppet:///modules/minecraft/eula.txt'
+  content => 'eula=true',
  }
 }
