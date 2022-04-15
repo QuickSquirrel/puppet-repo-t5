@@ -33,9 +33,9 @@ class mcft_init {
   notify => Service['minecraft'],
  }
 
- service { minecraft:
-    ensure => running
- }
+# service { minecraft:
+#    ensure => running
+# }
  
  service { 'firewalld':
   ensure => stopped,
