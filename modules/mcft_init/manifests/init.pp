@@ -16,18 +16,13 @@ class mcft_init {
   ensure => file,
   source => 'file:///vagrant/minecraft_server.jar',
  }
-}
-
-
-
-
-
+ 
  file {'/etc/systemd/system/minecraft.service':
-   ensure => file,
-   source => 'puppet:///modules/minecraft/minecraft.service'
-   }
+  ensure => file,
+  source => 'puppet:///modules/mcft_init/minecraft.service'
+ }
  ~> service { 'minecraft':
-        ensure => running,
-        enable => true
-   }
+  ensure => running,
+  enable => true
+ }
 }
