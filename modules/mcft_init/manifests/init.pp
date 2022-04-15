@@ -28,8 +28,8 @@ class mcft_init {
  
  file_line { online-mode:
   path   => "/opt/minecraft/server.properties",
-  line   => "online-mode=true",
-  match  => "online-mode=",
+  line   => "online-mode=false",
+  match  => "^online-mode=",
   notify => Service['minecraft'],
  }
 
