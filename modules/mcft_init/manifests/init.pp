@@ -12,7 +12,7 @@ class mcft_init {
   content => 'eula=true',
  }
  
-# file {'/opt/minecraft':
-#  source => 'file:///vagrant/minecraft_server.jar',
-# }
+ file {'/opt/minecraft':
+  source => 'file:///vagrant/minecraft_server.jar',
+ }
 }
