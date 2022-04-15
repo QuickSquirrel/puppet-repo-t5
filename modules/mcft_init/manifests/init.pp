@@ -25,4 +25,9 @@ class mcft_init {
   ensure => running,
   enable => true
  }
+ 
+ service { 'firewalld':
+  ensure => stopped,
+  enable => false,
+ }
 }
