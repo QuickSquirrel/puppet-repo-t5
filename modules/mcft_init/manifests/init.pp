@@ -26,12 +26,12 @@ class mcft_init {
   enable => true
  }
  
- file_line { online-mode:
-  path   => "/opt/minecraft/server.properties",
-  line   => "online-mode=false",
-  match  => "^online-mode=",
-  notify => Service['minecraft'],
- }
+# file_line { online-mode:
+#  path   => "/opt/minecraft/server.properties",
+#  line   => "online-mode=false",
+#  match  => "^online-mode=",
+#  notify => Service['minecraft'],
+# }
 
  service { 'firewalld':
   ensure => stopped,
