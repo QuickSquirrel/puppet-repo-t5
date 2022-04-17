@@ -31,7 +31,7 @@ class mcft_init {
   line   => "online-mode=false",
   match  => "^online-mode=",
   onlyif  => "test -f server.properties",
-  notify => Service['minecraft'],
+#  notify => Service['minecraft'],
  }
 # ~> service { 'minecraft':
 #  ensure => running,
