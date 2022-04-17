@@ -27,12 +27,16 @@ class mcft_init {
  }
  
  file_line { 'server.properties':
-  ensure => present,
   path   => "/opt/minecraft/",
   line   => "online-mode=false",
   match  => "^online-mode=",
+  onlyif  => "test -f server.properties",
   notify => Service['minecraft'],
  }
+# ~> service { 'minecraft':
+#  ensure => running,
+#  enable => true
+# }
 
  service { 'firewalld':
   ensure => stopped,
